@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {IngredientModel} from '../shared/models/ingredient.model';
+import {ShoppingListService} from './shopping-list.service';
 
 @Component({
   selector: 'app-shopping-list',
@@ -7,25 +8,21 @@ import {IngredientModel} from '../shared/models/ingredient.model';
   styleUrls: ['./shopping-list.component.css']
 })
 export class ShoppingListComponent implements OnInit {
-  ingredients: IngredientModel[] = [
-    new IngredientModel('apples', 5),
-    new IngredientModel('bananas', 10)
-  ];
-  existingIngredient: IngredientModel;
+  ingredients: IngredientModel[];
 
-  constructor() {
+  constructor(private slService: ShoppingListService) {
   }
 
   ngOnInit() {
-  }
+    this.ingredients = this.slService.getIngredients();
 
-  onIngredientAdded(ingredient: IngredientModel) {
-    this.existingIngredient = this.ingredients.find(t => t.name === ingredient.name);
-    if (this.existingIngredient) {
-      console.log('found existing ingredient');
-      // this.ingredients.values(name='sdd');
-    }
-    this.ingredients.push(ingredient);
+    // up on change in ingredientsChange after event emitted, we subscribe to the event
+    // and update our ingredients[] with all changes.
+    this.slService.ingredientsChange
+      .subscribe(
+        (ingredients: IngredientModel[]) => {
+          this.ingredients = ingredients;
+        }
+      )
   }
-
 }
