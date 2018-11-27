@@ -16,8 +16,13 @@ export class ShoppingListService {
 
   addIngredient( newIngredient: IngredientModel) {
     this.ingredients.push(newIngredient);
-
     // Emits an event with the change in the ingredient
+    this.ingredientsChange.emit(this.ingredients.slice());
+  }
+
+  addIngredients(newIngredients: IngredientModel[]) {
+    this.ingredients.push(...newIngredients);
+    // Emit an event with the updated ingredient.
     this.ingredientsChange.emit(this.ingredients.slice());
   }
 }
