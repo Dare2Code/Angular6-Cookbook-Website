@@ -3,11 +3,21 @@
     <div class="navbar-header">
       <a href="#" class="navbar-brand">Recipe Book</a>
     </div>
+
+    <!-- -->
     <div class="navbar-default">
+
+      <!-- Navigation Links -->
       <ul class="nav navbar-nav">
-        <li><a href="#" (click)="onPageSelect('Recipes')">Recipes</a></li>
-        <li><a href="#" (click)="onPageSelect('Shopping-List')">Shopping List</a></li>
+        <!-- if this router is active then a css class named 'active' is attached -->
+        <li routerLinkActive="active">
+          <a routerLink="/recipes">Recipes</a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/shopping-list">Shopping List</a>
+        </li>
       </ul>
+
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown" appDropdown>
           <a href="#" class="dropdown-toggle" role="button">Manage
