@@ -1,6 +1,7 @@
 import {EventEmitter} from '@angular/core';
 import {RecipeModel} from './recipe.model';
 import {IngredientModel} from '../shared/models/ingredient.model';
+import index from '@angular/cli/lib/cli';
 
 
 export class RecipeService {
@@ -26,5 +27,10 @@ export class RecipeService {
 
   getRecipes() {
     return this.recipes.slice();
+  }
+
+  getRecipe(recipeID: number) {
+    // returning a single recipe with recipeID as INDEX of the object array.
+    return this.recipes[recipeID];
   }
 }
