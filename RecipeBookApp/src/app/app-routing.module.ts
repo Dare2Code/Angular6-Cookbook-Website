@@ -5,6 +5,7 @@ import {ShoppingListComponent} from './shopping-list/shopping-list.component';
 import {RecipeStartComponent} from './recipes/recipe-start/recipe-start.component';
 import {RecipeDetailComponent} from './recipes/recipe-detail/recipe-detail.component';
 import {RecipeEditComponent} from './recipes/recipe-edit/recipe-edit.component';
+import {Test06TestComponent} from './test06/test/test.component';
 
 const appRoutes: Routes = [
   // Initial visit to the page will be redirected to recipes page
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
       { path: ':id/edit', component: RecipeEditComponent },
     ] },
   { path: 'shopping-list', component: ShoppingListComponent },
+  { path: 'test', component: Test06TestComponent },
 ];
 @NgModule({
   // Configure the Routes and added to the angular.

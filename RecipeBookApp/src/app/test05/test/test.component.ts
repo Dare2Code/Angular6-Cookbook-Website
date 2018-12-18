@@ -8,6 +8,6 @@ import {CounterService} from './service/counter.service';
   styleUrls: ['./test.component.css'],
   providers: [UserService, CounterService]
 })
-export class TestComponent {
+export class Test05TestComponent {
 
 }
