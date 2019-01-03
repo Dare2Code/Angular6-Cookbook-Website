@@ -30,4 +30,5 @@ export class Test06TestComponent implements OnInit {
     console.log(this.signupForm);
     this.signupForm.reset();
   }
+
 }

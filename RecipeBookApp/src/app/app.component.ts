@@ -10,4 +10,6 @@ export class AppComponent {
   onSelectedPage (selectedPage) {
     this.selectedPage = selectedPage;
   }
+
+  // TODo: use ngOnInit() here to fetch data when app loads - from server.
 }
